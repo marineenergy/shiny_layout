@@ -2,11 +2,27 @@ library(shiny)
 library(DT)
 options(shiny.port = 1234)
 
+web_url = "http://127.0.0.1:4321/"
+
 ui <- navbarPage(
-  title = "MarineEnergy.app", id = 'nav',
+  title = a("MarineEnergy.app", href=web_url), id = 'nav',
+  tags$head(
+    tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")),
+  tabPanel(
+    "Projects",
+    "TBD"),
+  tabPanel(
+    "Regulations",
+    "TBD"),
+  tabPanel(
+    "Interactions",
+    "TBD"),
   tabPanel(
     "Configure",
-    plotOutput("distPlot")),
+    "TBD"),
+  tabPanel(
+    "Management",
+    "TBD"),
   tabPanel(
     "Literature",
     selectInput(
