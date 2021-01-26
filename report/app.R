@@ -13,7 +13,6 @@ ui <- navbarPage(
     includeHTML("www/head.html")),
   tags$body(
     includeHTML("www/body.html")),
-  # includeHTML("www/body.html"),
   tabPanel(
     "Projects",
     "TBD"),
