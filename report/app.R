@@ -1,5 +1,8 @@
-library(shiny)
-library(DT)
+if (!require(librarian)){
+  install.packages("librarian")
+  library(librarian)
+}
+shelf(glue, shiny, DT)
 options(shiny.port = 1234)
 
 web_url = "http://127.0.0.1:4321/"
@@ -7,7 +10,10 @@ web_url = "http://127.0.0.1:4321/"
 ui <- navbarPage(
   title = a("MarineEnergy.app", href=web_url), id = 'nav',
   tags$head(
-    tags$link(rel = "stylesheet", type = "text/css", href = "styles.css")),
+    includeHTML("www/head.html")),
+  tags$body(
+    includeHTML("www/body.html")),
+  # includeHTML("www/body.html"),
   tabPanel(
     "Projects",
     "TBD"),
@@ -35,7 +41,10 @@ ui <- navbarPage(
     "TBD"),
   tabPanel(
     "Reports",
-    "TBD")
+    "TBD"),
+  div(
+    class = "footer",
+    includeHTML("www/footer.html"))
 )
 
 server <- function(input, output, session) {
