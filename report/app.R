@@ -9,16 +9,17 @@ web_url = "http://127.0.0.1:4321/"
 
 ui <- navbarPage(
   windowTitle = "MarineEnergy.app",
-  title = div(a(
+  title = a(
     img(src="images/logo-horizontal.svg",       class="default"),
     img(src="images/logo-horizontal-white.svg", class="white"),
-    href  = web_url,
-    class = "navbar-brand")),
+    href  = web_url
+  ),
   id = 'nav',
+  fluid = 'false',
+  theme = 'styles.css',
+  collapsible = 'true',
   tags$head(
-    includeHTML("www/head.html")),
-  tags$body(
-    includeHTML("www/body.html")),
+    includeHTML("www/components/head.html")),
   tabPanel(
     "Projects",
     "TBD"),
@@ -49,7 +50,7 @@ ui <- navbarPage(
     "TBD"),
   div(
     class = "footer",
-    includeHTML("www/footer.html"))
+    includeHTML("www/components/footer.html"))
 )
 
 server <- function(input, output, session) {
