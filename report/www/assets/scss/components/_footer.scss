@@ -1,0 +1,30 @@
+footer{
+  padding: 25px 0px;
+  margin: 0 -70px !important;
+  background: {
+    color: $color-navy;
+    image: url('/images/back-shine.png');
+    size: cover;
+    repeat: no-repeat;
+  }
+  color: #fff;
+  font:{
+    size: 16px;
+    weight: 600;
+  }
+  .logo{
+    min-width: 300px;
+  }
+  .copyright{
+    padding-top: 10px;
+    @media (max-width: $mediumBreakWidth) {
+      padding-top: 20px;
+    }
+  }
+  a{
+    color: $color-white;
+    &:hover{
+      color: $color-sky;
+    }
+  }
+}

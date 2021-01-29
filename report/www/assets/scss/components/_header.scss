@@ -1,0 +1,152 @@
+.navbar{
+  background-color: $color-white;
+  height: 102px;
+  padding: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 0px;
+  .container,
+  .container-fluid{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  @media (max-width: $smallBreakWidth) {
+    background-color: $color-navy;
+    padding: 5px 0px;
+    height: 65px;
+  }
+  .navbar-header{
+    .navbar-brand{
+      float: none;
+      display: block;
+      padding: 0px;
+      height: auto;
+      @media (max-width: $mediumBreakWidth) {
+        a{
+          display: block;
+          margin: auto;
+        }
+      }
+      @media (max-width: $smallBreakWidth) {
+        max-width: none;
+        margin: auto;
+      }
+      img{
+        &.default{
+          display: block;
+          @media (max-width: $smallBreakWidth) {
+            display: none;
+          }
+          max-width: 150px;
+        }
+        &.white{
+          display: none;
+          width: 200px;
+          margin: auto;
+          @media (max-width: $smallBreakWidth) {
+            display: block;
+          }
+        }
+      }
+    }
+    .navbar-toggle{
+      float: none;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      border: none;
+      .icon-bar{
+        background-color: #fff;
+      }
+    }
+  }
+  .navbar-collapse{
+    background-color: $color-white;
+    @media (max-width: $smallBreakWidth) {
+      border-bottom: solid 1px $color-lgray;
+      position: fixed;
+      top: 65px;
+      left: 0px;
+      right: 0px;
+    }
+    @media (max-width: $mediumBreakWidth) {
+      margin: auto;
+    }
+    .navbar-nav{
+      > li{
+        padding: 0px 10px 0px 0px;
+        @media (max-width: $smallBreakWidth) {
+          padding: 0;
+        }
+        @media (min-width: ($smallBreakWidth + 1)) {
+          &:not(:last-child):after{
+            content: '\25A0';
+            padding: 0 0 0 10px;
+            color: $color-sky;
+            font:{
+              size: 8px;
+            }
+            line-height: 10px;
+          }
+        }
+        &.active{
+          a{
+            color: $color-sky;
+            text-decoration: none;
+            background-color: transparent;
+          }
+        }
+        a{
+          font:{
+            family: $font-primary;
+            size: 12px;
+            weight: 700;
+          }
+          text-transform: uppercase;
+          color: $color-navy;
+          padding: 0px;
+          display: inline-block;
+          &:hover{
+            color: $color-sky;
+            text-decoration: none;
+          }
+          @media (max-width: $smallBreakWidth) {
+            font:{
+              size: 12px;
+              weight: 500;
+            }
+            text-align: center;
+            display: block;
+            padding: 10px;
+          }
+        }
+        .sub-menu{
+          padding: 0;
+          li{
+            text-align: center;
+            a{
+              font:{
+                size: 12px;
+                weight: 500;
+              }
+              display: block;
+              padding: 10px;
+              &:hover{
+                background-color: $color-navy;
+                color: $color-white;
+                text-decoration: none;
+              }
+            }
+            &:not(:last-child){
+              
+            }
+          }
+        }
+      }
+    }
+  }
+}  
