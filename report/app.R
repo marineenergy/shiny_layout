@@ -8,7 +8,13 @@ options(shiny.port = 1234)
 web_url = "http://127.0.0.1:4321/"
 
 ui <- navbarPage(
-  title = a("MarineEnergy.app", href=web_url), id = 'nav',
+  windowTitle = "MarineEnergy.app",
+  title = div(a(
+    img(src="images/logo-horizontal.svg",       class="default"),
+    img(src="images/logo-horizontal-white.svg", class="white"),
+    href  = web_url,
+    class = "navbar-brand")),
+  id = 'nav',
   tags$head(
     includeHTML("www/head.html")),
   tags$body(
