@@ -12,6 +12,9 @@ footer{
     size: 16px;
     weight: 600;
   }
+  @media (max-width: $mediumBreakWidth) {
+    margin: 0 !important;
+  }
   .logo{
     min-width: 300px;
   }
